@@ -12,8 +12,10 @@
 @interface YKAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString * title;
+@property (nonatomic) NSString * fullSizeURL;
+@property (nonatomic) UIImage * image;
 
-+ (instancetype)annotationWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title;
++ (instancetype)annotationWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title image:(UIImage *)image fullSizeURL:(NSString *)urlString;
 
 @end

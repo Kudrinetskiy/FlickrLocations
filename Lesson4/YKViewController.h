@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 @import MapKit;
 
+@class YKViewController;
+
+@protocol YKViewControllerDelegate <NSObject>
+- (void)addYKViewController:(YKViewController *)controller didGetImage:(UIImage *)image description:(NSString *)description;
+@end
+
 @interface YKViewController : UIViewController
 
+@property (weak, nonatomic) id <YKViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *getPhotosInfoButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-- (IBAction)getPhotoInfo:(id)sender;
+- (IBAction)getPhotosInfo:(id)sender;
 
 @end

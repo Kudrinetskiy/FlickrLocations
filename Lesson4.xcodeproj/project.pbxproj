@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7980602F867F4438A4536162 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D9ACE40B04144B42B35C2 /* libPods.a */; };
+		8433090E19C53E0300441AE2 /* YKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8433090D19C53E0300441AE2 /* YKDetailViewController.m */; };
 		84FAC98D19C332D200A18A3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FAC98C19C332D200A18A3E /* Foundation.framework */; };
 		84FAC98F19C332D200A18A3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FAC98E19C332D200A18A3E /* CoreGraphics.framework */; };
 		84FAC99119C332D200A18A3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FAC99019C332D200A18A3E /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		237D9ACE40B04144B42B35C2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BD38529B304989992EBE02 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8433090C19C53E0300441AE2 /* YKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDetailViewController.h; sourceTree = "<group>"; };
+		8433090D19C53E0300441AE2 /* YKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDetailViewController.m; sourceTree = "<group>"; };
 		84FAC98919C332D200A18A3E /* Lesson4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FAC98C19C332D200A18A3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84FAC98E19C332D200A18A3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				84FACAF219C3E8B200A18A3E /* YKAnnotation.m */,
 				84FAC9A119C332D200A18A3E /* YKViewController.h */,
 				84FAC9A219C332D200A18A3E /* YKViewController.m */,
+				8433090C19C53E0300441AE2 /* YKDetailViewController.h */,
+				8433090D19C53E0300441AE2 /* YKDetailViewController.m */,
 				84FAC9A419C332D200A18A3E /* Images.xcassets */,
 				84FACAED19C3DF4F00A18A3E /* label@2x.png */,
 				84FAC99319C332D200A18A3E /* Supporting Files */,
@@ -308,6 +313,7 @@
 				84FAC99D19C332D200A18A3E /* YKAppDelegate.m in Sources */,
 				84FAC9A319C332D200A18A3E /* YKViewController.m in Sources */,
 				84FAC99919C332D200A18A3E /* main.m in Sources */,
+				8433090E19C53E0300441AE2 /* YKDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
