@@ -18,6 +18,7 @@
 @interface YKViewController : UIViewController
 
 @property (weak, nonatomic) id <YKViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *getPhotosInfoButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

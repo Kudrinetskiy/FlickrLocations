@@ -28,6 +28,7 @@
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithFrame:self.view.frame];
     self.spinner.hidesWhenStopped = YES;
+    self.spinner.color = [UIColor blueColor];
     [self.spinner startAnimating];
     [self.view addSubview:self.spinner];
 }

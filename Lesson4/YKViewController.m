@@ -17,29 +17,25 @@
 @property (nonatomic) NSMutableArray * fullSizeURLs;
 @end
 
-static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=90f769c05a5f121ea4e592ea0147b916&tags=chile&format=json&nojsoncallback=1&per_page=10&has_geo=1&extras=geo";
+static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=90f769c05a5f121ea4e592ea0147b916&format=json&nojsoncallback=1&per_page=10&has_geo=1&extras=geo";
 
 @implementation YKViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.thumbs = [NSMutableArray arrayWithCapacity:10];
-    self.descriptions = [NSMutableArray arrayWithCapacity:10];
-    self.fullSizeURLs = [NSMutableArray arrayWithCapacity:10];
-}
 
 #pragma mark - Tap getPhotosInfoButton
 
 - (IBAction)getPhotosInfo:(id)sender
 {
-    NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:BaseURLString]];
+    [self.textField resignFirstResponder];
+    NSString * requestString = [NSString stringWithFormat:@"%@&tags=%@", BaseURLString, self.textField.text];
+    NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.thumbs = [NSMutableArray arrayWithCapacity:10];
+        self.descriptions = [NSMutableArray arrayWithCapacity:10];
+        self.fullSizeURLs = [NSMutableArray arrayWithCapacity:10];
         self.infoes = ((NSDictionary *)responseObject)[@"photos"][@"photo"];
         [self getPhotoFromEnumerator:[self.infoes objectEnumerator]];
      }
@@ -105,6 +101,7 @@ static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?
 
 - (void)createAnnotations
 {
+    [self.mapView removeAnnotations:self.annotations];
     self.annotations = [NSMutableArray arrayWithCapacity:[self.infoes count]];
 
     for (int i = 0; i < [self.infoes count]; i++) {
@@ -118,7 +115,6 @@ static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?
         [self.annotations addObject:annotation];
     }
     
-    [self.mapView removeAnnotations:self.annotations];
     [self.mapView addAnnotations:self.annotations];
     [self.mapView showAnnotations:self.annotations animated:YES];
 }
@@ -173,6 +169,11 @@ static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?
     [self performSegueWithIdentifier:@"PhotoSegue" sender:(YKAnnotation *)view.annotation];
 }
 
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
+{
+    [self.textField resignFirstResponder];
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(YKAnnotation *)sender
@@ -181,6 +182,14 @@ static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?
         self.delegate = segue.destinationViewController;
         [self getFullSizePhoto:sender];
     }
+}
+
+#pragma mark - Textfield delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
