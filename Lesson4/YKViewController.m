@@ -81,7 +81,11 @@ static NSString * const BaseURLString = @"https://api.flickr.com/services/rest/?
     [operation setCompletionBlockWithSuccess:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
          NSDictionary * json = (NSDictionary *)responseObject[@"photo"][@"location"];
-         NSString * description = [NSString stringWithFormat:@"%@, %@", json[@"country"][@"_content"], json[@"county"][@"_content"]];
+         NSString * country = json[@"country"][@"_content"];
+         NSString * county = json[@"county"][@"_content"];
+         NSString * description = [NSString stringWithFormat:@"%@, %@",
+                                                                country ? country : @"",
+                                                                county ? county : @""];
          [self.descriptions addObject:description];
 
          if ([self.descriptions count] < 10) {

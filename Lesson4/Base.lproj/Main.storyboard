@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WqX-vM-1Gj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WqX-vM-1Gj">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-194" y="36"/>
         </scene>
-        <!--View Controller - Flickr Locations-->
+        <!--Flickr Locations-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="YKViewController" sceneMemberID="viewController">
@@ -32,30 +32,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jY4-Hy-10u">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jY4-Hy-10u">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="c2Y-oE-CyD"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type keyword here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-f1-Sop">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type keyword here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQ6-f1-Sop">
                                 <rect key="frame" x="20" y="79" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59101386636541631" green="0.74514188657070612" blue="0.92153284671532842" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="96b-sk-K0L"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m68-sC-05s">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m68-sC-05s">
                                 <rect key="frame" x="178" y="79" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.054901964960000001" green="0.56862747670000002" blue="0.96862751250000001" alpha="0.80000000000000004" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6pr-WG-vQO"/>
+                                    <constraint firstAttribute="width" constant="122" id="wea-94-L3j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5by-VN-oTE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5by-VN-oTE">
                                 <rect key="frame" x="178" y="79" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="B9i-z7-Pd8"/>
+                                    <constraint firstAttribute="height" constant="30" id="MfO-RL-X9v"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="get photos">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +74,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m68-sC-05s" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="3lT-tb-8r3"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jY4-Hy-10u" secondAttribute="bottom" id="7fx-Ad-MW7"/>
+                            <constraint firstAttribute="trailing" secondItem="m68-sC-05s" secondAttribute="trailing" constant="20" id="Kku-my-oPQ"/>
+                            <constraint firstItem="aQ6-f1-Sop" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="OiK-ng-OBX"/>
+                            <constraint firstItem="jY4-Hy-10u" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TYl-c1-1Ta"/>
+                            <constraint firstItem="5by-VN-oTE" firstAttribute="leading" secondItem="aQ6-f1-Sop" secondAttribute="trailing" constant="8" id="TxJ-bS-N5Z"/>
+                            <constraint firstItem="5by-VN-oTE" firstAttribute="leading" secondItem="aQ6-f1-Sop" secondAttribute="trailing" constant="8" id="Vi4-Gy-bWe"/>
+                            <constraint firstAttribute="trailing" secondItem="jY4-Hy-10u" secondAttribute="trailing" id="csY-fm-Wgt"/>
+                            <constraint firstAttribute="trailing" secondItem="5by-VN-oTE" secondAttribute="trailing" constant="20" id="qlc-ux-qGk"/>
+                            <constraint firstItem="jY4-Hy-10u" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="rx1-Id-Y9y"/>
+                            <constraint firstItem="aQ6-f1-Sop" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="x5a-By-mhg"/>
+                            <constraint firstItem="m68-sC-05s" firstAttribute="leading" secondItem="aQ6-f1-Sop" secondAttribute="trailing" constant="8" id="yvX-1J-VTa"/>
+                            <constraint firstItem="5by-VN-oTE" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="zh9-5W-mch"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Flickr Locations" id="VJu-oq-HRW"/>
                     <connections>
@@ -92,12 +114,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-RX-oFS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-RX-oFS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kCN-RX-oFS" secondAttribute="trailing" id="3Aj-3t-6US"/>
+                            <constraint firstItem="kCN-RX-oFS" firstAttribute="leading" secondItem="uGp-kh-H0K" secondAttribute="leading" id="E86-Y0-Hvx"/>
+                            <constraint firstItem="xDj-9a-mun" firstAttribute="top" secondItem="kCN-RX-oFS" secondAttribute="bottom" id="GuL-ga-VLC"/>
+                            <constraint firstItem="kCN-RX-oFS" firstAttribute="top" secondItem="uGp-kh-H0K" secondAttribute="top" id="cJF-ii-d9A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="482-Lr-XLK"/>
                     <connections>

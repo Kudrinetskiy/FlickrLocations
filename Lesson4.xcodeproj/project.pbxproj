@@ -132,13 +132,13 @@
 			children = (
 				84FAC99B19C332D200A18A3E /* YKAppDelegate.h */,
 				84FAC99C19C332D200A18A3E /* YKAppDelegate.m */,
-				84FAC99E19C332D200A18A3E /* Main.storyboard */,
 				84FACAEF19C3E80F00A18A3E /* YKAnnotation.h */,
 				84FACAF219C3E8B200A18A3E /* YKAnnotation.m */,
 				84FAC9A119C332D200A18A3E /* YKViewController.h */,
 				84FAC9A219C332D200A18A3E /* YKViewController.m */,
 				8433090C19C53E0300441AE2 /* YKDetailViewController.h */,
 				8433090D19C53E0300441AE2 /* YKDetailViewController.m */,
+				84FAC99E19C332D200A18A3E /* Main.storyboard */,
 				84FAC9A419C332D200A18A3E /* Images.xcassets */,
 				84FACAED19C3DF4F00A18A3E /* label@2x.png */,
 				84FAC99319C332D200A18A3E /* Supporting Files */,
@@ -444,6 +444,7 @@
 				INFOPLIST_FILE = "Lesson4/Lesson4-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -459,6 +460,7 @@
 				INFOPLIST_FILE = "Lesson4/Lesson4-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
